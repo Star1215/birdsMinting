@@ -198,65 +198,65 @@ const App = () => {
     }
   }
 
-  async function pauseMint() {
-    if (contract) {
-      if( account == owner) {
-        try {
-          await contract.methods
-            .pause(true)
-            .send({ from: account });
-        } catch (error) {
-          if (error.code === 4001) {
-            swal("Transaction Rejected!", "", "error");
-          } else {
-            swal("Transaction Failed!", "", "error");
-          }
-        }
-      } else {
-        swal(
-          "",
-          "Contract owner can control pause or resume minting",
-          "error"
-        );
-      }
-    } else {
-      swal(
-        "",
-        "Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!",
-        "error"
-      );
-    }
-  }
+  // async function pauseMint() {
+  //   if (contract) {
+  //     if( account == owner) {
+  //       try {
+  //         await contract.methods
+  //           .pause(true)
+  //           .send({ from: account });
+  //       } catch (error) {
+  //         if (error.code === 4001) {
+  //           swal("Transaction Rejected!", "", "error");
+  //         } else {
+  //           swal("Transaction Failed!", "", "error");
+  //         }
+  //       }
+  //     } else {
+  //       swal(
+  //         "",
+  //         "Contract owner can control pause or resume minting",
+  //         "error"
+  //       );
+  //     }
+  //   } else {
+  //     swal(
+  //       "",
+  //       "Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!",
+  //       "error"
+  //     );
+  //   }
+  // }
 
-  async function resumeMint() {
-    if (contract) {
-      if(account == owner) {
-        try {
-          await contract.methods
-            .pause(false)
-            .send({ from: account });
-        } catch (error) {
-          if (error.code === 4001) {
-            swal("Transaction Rejected!", "", "error");
-          } else {
-            swal("Transaction Failed!", "", "error");
-          }
-        }
-      } else {
-        swal(
-          "",
-          "Contract owner can control pause or resume minting",
-          "error"
-        );
-      }
-    } else {
-      swal(
-        "",
-        "Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!",
-        "error"
-      );
-    }
-  }
+  // async function resumeMint() {
+  //   if (contract) {
+  //     if(account == owner) {
+  //       try {
+  //         await contract.methods
+  //           .pause(false)
+  //           .send({ from: account });
+  //       } catch (error) {
+  //         if (error.code === 4001) {
+  //           swal("Transaction Rejected!", "", "error");
+  //         } else {
+  //           swal("Transaction Failed!", "", "error");
+  //         }
+  //       }
+  //     } else {
+  //       swal(
+  //         "",
+  //         "Contract owner can control pause or resume minting",
+  //         "error"
+  //       );
+  //     }
+  //   } else {
+  //     swal(
+  //       "",
+  //       "Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!",
+  //       "error"
+  //     );
+  //   }
+  // }
 
   function handleMinus() {
     // let newNum = 1
@@ -294,10 +294,10 @@ const App = () => {
               {/* <h1>
                 Mint Sup Bird NFT
               </h1> */}
-              <div>
+              {/* <div>
                 <Button variant='primary' onClick={() =>pauseMint()}>Pause Minting</Button>
                 <Button variant='primary' onClick={() =>resumeMint()}>Resume Minting</Button>
-              </div>
+              </div> */}
               <StyledCard className='mintCard'>
                 <h1>{totalSupply}/{maxSupply}</h1>
                 <p className='sub__heading'>
@@ -384,7 +384,7 @@ const App = () => {
       </Slide>
 
       {/* Section 4 */}
-      <Slide className='forth__section' id='team'>
+      {/* <Slide className='forth__section' id='team'>
         <Container>
           <Row className='text-center'>
             <Col md={12} className='mb-5'>
@@ -424,7 +424,7 @@ const App = () => {
             </Col>
           </Row>
         </Container>
-      </Slide>
+      </Slide> */}
 
       {/* Section 5 */}
       <Slide className='fifth__section' id='roadmap'>
